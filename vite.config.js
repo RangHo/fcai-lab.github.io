@@ -14,8 +14,8 @@ export default defineConfig({
           filename.split(/[/\\]/).includes("node_modules") ? undefined : true,
       },
       adapter: adapter(),
-      preprocess: [mdsvex({ extensions: [".svx", ".md"] })],
-      extensions: [".svelte", ".svx", ".md"],
+      preprocess: [mdsvex({ extensions: [".mdx", ".md"] })],
+      extensions: [".svelte", ".mdx", ".md"],
     }),
   ],
 });
