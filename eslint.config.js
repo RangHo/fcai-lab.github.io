@@ -13,7 +13,7 @@ export default defineConfig(
   js.configs.recommended,
   ts.configs.recommended,
   svelte.configs.recommended,
-  prettier.configs.recommended,
+  prettier,
   svelte.configs.recommended,
   {
     languageOptions: { globals: { ...globals.browser, ...globals.node } },
