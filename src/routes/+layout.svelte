@@ -1,7 +1,19 @@
 <script lang="ts">
+  import type { Snippet } from "svelte";
+
+  import Header from "$lib/components/header.svelte";
+
   import "./layout.css";
 
-  let { children } = $props();
+  interface Props {
+    children: Snippet;
+  }
+
+  let { children }: Props = $props();
 </script>
 
-{@render children()}
+<Header />
+
+<main class="prose max-w-4/5">
+  {@render children()}
+</main>
