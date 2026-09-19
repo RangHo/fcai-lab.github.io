@@ -3,7 +3,7 @@
 
   interface Props {
     name: string;
-    profile: any;
+    profile: string;
     children: Snippet;
   }
 

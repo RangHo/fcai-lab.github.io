@@ -1,24 +1,25 @@
 <script lang="ts">
+  import { resolve } from "$app/paths";
   import { page } from "$app/state";
 
   const links = [
-    { href: "/", label: "Home" },
-    { href: "/members", label: "Members" },
-    { href: "/projects", label: "Projects" },
-    { href: "/publications", label: "Publications" },
-  ];
+    { route: "/", label: "Home" },
+    { route: "/members", label: "Members" },
+    { route: "/projects", label: "Projects" },
+    { route: "/publications", label: "Publications" },
+  ] as const;
 </script>
 
 <header>
-  <a href="/">Formal Computing and AI Lab.</a>
+  <a href={resolve("/")}>Formal Computing and AI Lab.</a>
 
   <nav aria-label="Main">
     <ul>
-      {#each links as { href, label } (href)}
+      {#each links as { route, label } (route)}
         <li>
           <a
-            {href}
-            aria-current={page.url.pathname === href ? "page" : undefined}
+            href={resolve(route)}
+            aria-current={page.route.id === route ? "page" : undefined}
           >
             {label}
           </a>
